@@ -1,0 +1,7 @@
+add update/delete operations to posts for author
+give staff crud capabilities for all posts
+enable comment deletion for staff
+create groups for users, staff and (maybe authors)
+cerate an authentication system (maybe use ivanov portfolio system for eg)
+create suggestion form
+...

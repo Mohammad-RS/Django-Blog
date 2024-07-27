@@ -1,0 +1,33 @@
+.post-header {background-color: black; color: white; box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.5); padding: 1rem; display: flex; flex-direction: column; align-items: center;}
+.post-header h1 {font-size: 2.5rem; font-weight: 900; margin: 0;}
+.post-header p {font-size: 1.5rem; font-weight: 700; display: inline; margin: 1rem;}
+.post-tags {margin: 1.25rem;}
+.post-tags span {padding: 0.6rem 1.2rem;margin-right: 0.25rem; border-radius: 1rem; font-size: 1.25rem; font-weight: bold; background-color: #4488cc; color: white;}
+.post-grid {width: 100%; margin: 0 auto; padding: 2rem; padding-bottom: 0;}
+.post-content {background-color: black; color: white; margin-bottom: 4rem; font-size: 1rem; font-weight: 700; line-height: 1.5; text-align: center; border-radius: 1rem; box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.5); padding: 1.5rem;}
+.post-image{display: flex; justify-content: center;}
+.post-image img {width: 45rem; height: 33.75rem; border: 3px solid orangered; border-radius: 1.25rem; margin-bottom: 1.5rem;}
+.titles {display: flex; justify-content: space-between;}
+.titles h1 {text-align:center; font-size:2.5rem; font-weight:900}
+.titles a {text-decoration: none; color: #B946AD; font-size: 1.75rem; font-weight: bold; display: flex; align-items: last baseline;}
+.titles a:active,.titles a:hover {text-decoration: none; color: red;}
+.comments {width: 80%; margin: 0 auto;  padding: 1rem; background-color: #dcdcdc; border-radius: 2rem;}
+.comments h2 {font-size: 2rem; margin-bottom: 1rem; text-align: center;}
+.comments ul {list-style: none; padding: 0; margin: 0;}
+.comments article {padding: 1rem; background-color: #f5f5f5; border-radius: 1rem; margin-bottom: 1rem;}
+.comments address {font-weight: 800; display: flex; font-style: normal; align-items: baseline; justify-content: space-between;}
+.comments figure.avatar {width: 40px; height: 40px; border-radius: 40%; overflow: hidden;}
+.comments figure.avatar img {width: 100%; height: auto;}
+.comments time {font-size: 0.8rem; color: #666;}
+.comments .comcont {margin-top: 1rem;}
+.comments .comcont p {margin-bottom: 1rem;}  
+.comments form {padding: 0;}
+.comments input, .comments textarea {display:block; width: 100%; padding: 0.5rem; border-radius: 1rem; border: 1px solid #ccc; margin-bottom: 0.5rem;}
+.comments input[type="submit"], .comments input[type="reset"] {display: block; width: 100%; padding: 0.5rem; margin: 0.5rem auto; background-color: #4CAF50; color: white; border: none; border-radius: 1rem; cursor: pointer;}
+.comments input[type="submit"]:hover, .comments input[type="reset"]:hover {background-color: #3e8e41;}
+.comments .errorlist {list-style: none; padding: 0; margin: 0; color: #e80b0b !important; }
+.error-box {display: flex; justify-content: space-between; width: 40%; background-color: #ffcccc; border: 2px solid red; border-radius: 12px; margin: 0 auto 30px auto; padding: 16px;}
+.error-box p {color: rgb(0, 0, 0); font-size: 1.5rem; margin: 0.5rem;}
+.error-box a {text-decoration: none; font-size: 1.25rem; padding: 0.25rem 1.5rem; color: black; bottom: 0.5rem; right: 0.5rem; border: 2px solid black; border-radius: 2rem;}
+.error-box a:hover {color: cyan; background-color: black;}
+.read-later {border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; font-size: 1.25rem; margin: 4px 2px; cursor: pointer; border-radius: 4px; background-color: #f44336;}

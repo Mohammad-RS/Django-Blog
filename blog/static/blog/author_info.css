@@ -1,0 +1,8 @@
+.author-info {background-color: #d1e1ed; padding: 1.5rem; border-radius: 1rem;}
+.author-info h2 {font-size: 2rem}
+.author-info p {font-size: 1.5rem;}
+.author-info ul {list-style-type: none; padding: 0;}
+.post-list p {font-size: 1.5rem;}
+.post-list li {font-size: 1.25rem; display: inline;}
+.post-list a {color: blue; text-decoration: none;}
+.post-list a:hover {color: red; text-decoration: none;}

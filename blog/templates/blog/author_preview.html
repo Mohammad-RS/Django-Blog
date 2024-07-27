@@ -1,0 +1,18 @@
+{% load static %}
+
+<table>
+    <thead>
+      <tr>
+        <th><a href="{% url "author_info" author.first_name author.last_name %}">{{author.first_name}} {{author.last_name}}</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in author.posts.all %}
+      {% if forloop.counter0 < 3 %}
+      <tr>
+        <td><a href="{% url "post_details" post.slug %}"><li>{{post.title}}</li></a></td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+</table>

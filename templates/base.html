@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}Replace title{% endblock title %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="{% static "layout.css" %}" rel="stylesheet" type="text/css" media="all">
+	{% block static_files %}Replace static_files{% endblock static_files %}
+</head>
+<body id="top">
+	<div class="wrapper row0">
+		<div id="topbar" class="hoc clear">
+			<div class="fl_left"> 
+				<ul class="nospace">
+					<li><a href="tel:123-456-7890"><i class="fas fa-phone rgtspace-5"></i> +00 (123) 456 7890</a></li>
+					<li><a href="mailto:info@domain.com"><i class="far fa-envelope rgtspace-5"></i> support@domain.com</a></li>
+				</ul>
+			</div>
+			<div class="fl_right"> 
+				<ul class="nospace">
+					<li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+					<li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="bgded"> 
+		<div class="wrapper row1">
+			<header id="header" class="hoc clear">
+				<div id="logo" class="fl_left"> 
+					<h1><a href="{% url "index" %}">My Blog</a></h1>
+				</div>
+				<nav id="mainav" class="fl_right"> 
+					<ul class="clear">
+						<li class="active"><a href="{% url "index" %}">Home</a></li>
+						<li><a class="drop" href="{% url "index" %}">Pages</a>
+							<ul>
+								<li><a href="{% url "gallery" %}">Gallery</a></li>
+								<li><a href="#">Suggestion</a></li>
+							</ul>
+						</li>
+						<li><a class="drop" href="{% url "posts" %}">Blog</a>
+							<ul>
+								<li><a href="{% url "posts" %}">Posts</a></li>
+								<li><a href="{% url "saved" %}">My Saved Posts</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+		<div class="overlay">
+			<div id="breadcrumb" class="hoc clear"> 
+				<h6 class="heading">Welcome to a world of inspiration and discovery! Explore captivating stories, insights, and ideas that resonate with your curiosity. Dive into the heart of our community and join us in creating a unique space!</h6>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper row3">
+		<main class="hoc container clear"> 
+			<div class="content"> 
+					{% block content %}
+						Replace Content
+					{% endblock content %}
+			</div>
+			<div class="clear"></div>
+		</main>
+	</div>
+	<div class="wrapper coloured">
+		<section id="ctdetails" class="hoc clear"> 
+			<ul class="nospace clear">
+				<li class="one_quarter first">
+					<div class="block clear"><a href="tel:123-456-7890"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +00 (123) 456 7890</span></div>
+				</li>
+				<li class="one_quarter">
+					<div class="block clear"><a href="mailto:support@domain.com"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> support@domain.com</span></div>
+				</li>
+				<li class="one_quarter">
+					<div class="block clear"><a href="https://maps.app.goo.gl/TmPVTgkyfm5WZW7q6"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Come visit us:</strong> Directions to <a href="#">our location</a></span></div>
+				</li>
+				<li class="one_quarter">
+					<div class="block clear"><i class="fas fa-clock"></i> <span><strong>Monday - Saturday:</strong> 08.00am - 18.00pm</span></div>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div class="bgded overlay row4">
+		<footer id="footer" class="hoc clear"> 
+			<div class="one_quarter first">
+				<h6 class="heading">Our Goal In My Project</h6>
+				<p class="nospace btmspace-15">Welcome to our community, where our primary goal is to inspire and inform. We strive to create a digital hub that sparks curiosity, fosters community, and provides valuable insights. Join us on a journey of exploration, learning, and connection as we curate content to empower and enrich your online experience.</p>
+			</div>
+			<div class="one_quarter">
+				<h6 class="heading">About Us</h6>
+				<p class="nospace btmspace-15">We're not just a website, we're a vibrant community of individuals united by curiosity. Our mission? To celebrate the beauty of knowledge, ignite creativity, and build bridges across interests. From insightful articles to captivating stories, we're here to spark inspiration and create a haven for those hungry for new perspectives.</p>
+			</div>
+			<div class="one_quarter">
+				<h6 class="heading">Quotes</h6>
+				<ul class="nospace linklist">
+					<li>
+						<article>
+							<p class="nospace btmspace-10"><a href="#">"Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that."</a></p>
+							<p class="block font-xs">-Martin Luther King Jr.</p>
+						</article>
+					</li>
+					<li>
+						<article>
+							<p class="nospace btmspace-10"><a href="#">"Don't worry when you are not recognized, but strive to be worthy of recognition." </a></p>
+							<p class="block font-xs">-Abraham Lincoln</p>
+						</article>
+					</li>
+				</ul>
+			</div>
+			<div class="one_quarter">
+				<h6 class="heading">Gallery</h6>
+				<a href="{% url "gallery" %}">See Our Photo Gallery...</a>
+			</div>
+		</footer>
+	</div>
+	<div class="wrapper row5">
+		<div id="copyright" class="hoc clear"> 
+			<p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+		</div>
+	</div>
+	<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+	<script src="{% static "scripts/jquery.min.js" %}"></script>
+	<script src="{% static "scripts/jquery.backtotop.js" %}"></script>
+	<script src="{% static "scripts/jquery.mobilemenu.js" %}"></script>
+</body>
+</html>

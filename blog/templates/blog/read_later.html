@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Read Later{% endblock title %}
+
+{% block static_files %}
+    <link rel="stylesheet" type="text/css" href="{% static "blog/post_preview.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "blog/posts.css" %}">
+{% endblock static_files %}
+
+{% block content %}
+<div class="titles">
+    <h1 class="btmspace-15">Saved Posts</h1> 
+</div> <hr class="btmspace-30">
+{% if saved_posts %}
+    <section id="introblocks">
+        <ul class="nospace group btmspace-50">
+            {% for post in saved_posts %}
+                <li class="one_third"> {% include "blog/post_preview.html" with post=post %} </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% else %}
+    <p>You haven't saved any posts yet!</p>
+{% endif %}
+{% endblock content %}

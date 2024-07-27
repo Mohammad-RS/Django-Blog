@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}All Posts{% endblock title %}
+
+{% block static_files %} 
+  <link rel="stylesheet" href="{% static 'blogs/posts.css' %}">
+{% endblock static_files %}
+
+
+{% block content %}
+<div class="titles">
+  <h1 class="btmspace-15">All Posts</h1> 
+</div> <hr class="btmspace-30">
+<section id="introblocks">
+  <ul class="nospace group btmspace-50">
+      {% for post in posts %}
+          <li class="one_quarter">
+              {% include "blog/post_preview.html" with post=post %}
+          </li>
+      {% endfor %}
+  </ul>
+</section>
+{% endblock content %}

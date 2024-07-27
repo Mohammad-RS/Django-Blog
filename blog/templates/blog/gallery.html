@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gallery{% endblock title %}
+
+{% block static_files %}{% endblock static_files %}
+
+{% block content %}
+<div id="gallery">
+  <figure>
+    <header class="heading">Gallery Collection</header>
+    <ul class="nospace clear">
+      <li class="one_quarter first"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter first"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter first"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter"><img src="{% static "images/avatar.png" %}" alt=""></li>
+      <li class="one_quarter"><img src="{% static "images/avatar.png" %}" alt=""></li>
+    </ul>
+  </figure>
+</div>
+<div class="clear"></div>
+{% endblock content %}

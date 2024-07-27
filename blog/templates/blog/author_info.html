@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{author.first_name}}-{{author.last_name}}{% endblock title %}
+
+{% block static_files %}
+    <link rel="stylesheet" href="{% static 'blog/author_info.css' %}">
+{% endblock static_files %}
+
+{% block content %}
+<div class="author-info">
+    <h2>{{author.first_name}} {{author.last_name}} ({{author.rating}}/10)</h2>
+    <p>Email: {{author.email}}</p>
+    <ul class="post-list">
+        <p>Posts:</p>
+        {% for post in author_posts %}
+            <li><a href="{% url "post_details" post.slug %}">{{post.title}}<a/></li><br>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{post.title}}{% endblock title %}
+
+{% block static_files %} 
+    <link rel="stylesheet" href="{% static 'blog/post_details.css' %}">
+{% endblock static_files %}
+
+{% block content %}
+{% if comment_form.errors %}
+  <div class='error-box'>
+    <p>Something went wrong!</p>
+    <a href="#write-comment">Go again</a>
+  </div>
+{% endif %}
+<section>
+  <header class="post-header">
+    <h1>{{post.title}} </h1> 
+    <p>{{post.author}} | <time>{{post.publish_time|date:"M d, Y"}}</time></p>
+    <div class="post-tags">
+    {% for tag in tags %}
+        <span>{{tag}}</span>
+    {% endfor %}
+    </div>
+    {% if is_saved %}
+      <form action="{% url "read_later" post.slug %}" method="POST"> {% csrf_token %}
+        <Button type="submit" name="read-later" class="read-later">Remove from read later</Button>
+      </form>
+    {% else %}
+      <form action="{% url "read_later" post.slug %}" method="POST"> {% csrf_token %}
+        <Button type="submit" name="read-later" class="read-later">Add to read later</Button>
+      </form>
+    {% endif %}
+  </header>
+  <main class="post-grid">
+    <article class="post-content">
+      <div class="post-image">
+        <img src="{{post.image.url}}" alt="{{post.title}}" class="blog-image">
+      </div> <hr>
+      <p>{{post.context}}</p>
+    </article>
+    <div class="titles">
+      <h1 class="btmspace-15">Related Posts</h1> 
+      <a class="btmspace-15" href="{% url "posts" %}">See More...</a> 
+    </div> <hr class="btmspace-30">
+    <section id="introblocks">
+      <ul class="nospace group btmspace-50">
+        {% for post in related_posts %}
+          <li class="one_third">
+            {% include "blog/post_preview.html" with post=post %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </main>
+</section>
+<div class="comments">
+  <h2>Comments</h2>
+  <ul>
+    {% for comment in comments %}
+    <li>
+      <article>
+        <header>
+          <address>
+          <a href="mailto:{{comment.email}}">{{comment.name}}</a>
+          <figure class="avatar"><img src="{% static "images/avatar.png" %}" alt=""></figure>
+          </address>
+        </header>
+        <div class="comcont">
+          <p>{{comment.comment}}</p>
+        </div>
+      </article>
+    </li>
+    {% endfor %}
+    <li>
+      <article>
+        <header>
+          <address>
+          <a href="#">A Name</a>
+          <figure class="avatar"><img src="{% static "images/avatar.png" %}" alt=""></figure>
+          </address>
+        </header>
+        <div class="comcont">
+          <p>This is an example of a comment made on a post.</p>
+        </div>
+      </article>
+    </li>
+  </ul>
+  <h2>Write A Comment</h2>
+  <form action="{% url "post_details" post.slug %}" method="post" class="comments" id="write-comment"> {% csrf_token %}
+    <div>
+      {% for field in comment_form %}
+        <div>
+          {{field.label}} {{ field.help_text }}
+          {{field}}
+          {{field.errors}}
+        </div>
+      {% endfor %}
+    </div>
+    <div>
+      <input type="submit" name="submit" value="Submit Form">
+      <input type="reset" name="reset" value="Reset Form">
+    </div>
+  </form>
+</div>
+{% endblock content %}

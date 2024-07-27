@@ -1,0 +1,12 @@
+{% load static %}
+
+<figure>
+    <a class="imgover" href="{% url "post_details" post.slug %}">
+    <img src="{{post.image.url}}" alt="{{post.title}}"></a>
+    <figcaption>
+        <h6 class="heading">{{post.title}}</h6> <hr>
+        <div>
+            <p>{{post.summary}}</p>
+        </div>
+    </figcaption>
+</figure>

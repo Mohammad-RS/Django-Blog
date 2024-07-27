@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block static_files %}
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/index.css'%}">
+{% endblock static_files %}
+
+{% block content %}
+<div class="titles">
+  <h1 class="btmspace-15">Discover Trending Topics</h1> 
+  <a class="btmspace-15" href="{% url "posts" %}">See More...</a> 
+</div> <hr class="btmspace-30">
+<section id="introblocks">
+  <ul class="nospace group btmspace-50">
+    <li class="one_third first">
+      {% include "blog/post_preview.html" with post=trending_post %}
+    </li>
+    {% for post in trending_posts %}
+    <li class="one_third">
+        {% include "blog/post_preview.html" with post=post %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+<div class="titles">
+  <h1 class="btmspace-15">Most Recent Posts</h1> 
+  <a class="btmspace-15" href="{% url "posts" %}">See More...</a> 
+</div> <hr class="btmspace-30">
+<section id="introblocks">
+  <ul class="nospace group btmspace-50">
+    <li class="one_third first">
+      {% include "blog/post_preview.html" with post=latest_post %}
+    </li>
+    {% for post in latest_posts %}
+    <li class="one_third">
+        {% include "blog/post_preview.html" with post=post %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+<div class="titles">
+  <h1 class="btmspace-15">Most Popular Authors</h1> 
+  <a class="btmspace-15" href="{% url "posts" %}">See More...</a> 
+</div> <hr class="btmspace-30">  
+<div class="group btmspace-50 demo">
+  <div class="one_third first authors">
+    {% include "blog/author_preview.html" with author=top_author %}
+  </div>
+  {% for author in top_authors %}
+    <div class="one_third authors">
+      {% include "blog/author_preview.html" with author=author %}
+    </div>
+  {% endfor %}
+</div>
+<div class="clear"></div>
+{% endblock content %}
